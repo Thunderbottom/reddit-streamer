@@ -12,10 +12,12 @@ import (
 )
 
 var opt options
+var log *logrus.Logger
 var parser = flags.NewParser(&opt, flags.Default)
 
 // getConfig reads and returns the configuration file
 func getConfig() config {
+	log = getLogger(false)
 	if _, err := parser.Parse(); err != nil {
 		switch flagsErr := err.(type) {
 		default:

@@ -53,7 +53,7 @@ $ docker run -v config.toml:/config.toml reddit-streamer
 If you do not want to build your own docker image:
 
 ```shell
-$ docker run -v config.toml:/config.toml thunderbottom/reddit-streamer
+$ docker run -v $(pwd)/config.toml:/config.toml thunderbottom/reddit-streamer
 ```
 
 ## License

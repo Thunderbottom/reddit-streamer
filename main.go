@@ -8,12 +8,10 @@ import (
 	"time"
 
 	"github.com/go-telegram-bot-api/telegram-bot-api"
-	"github.com/sirupsen/logrus"
 	"github.com/vartanbeno/go-reddit/reddit"
 )
 
 var ctx = context.Background()
-var log *logrus.Logger
 
 func main() {
 	cfg := getConfig()
