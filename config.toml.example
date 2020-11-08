@@ -1,0 +1,12 @@
+[general]
+interval=60
+debug=false
+
+[telegram]
+api_key=""
+channel_ids=[]
+
+[filters]
+subreddit=""
+keywords=[]
+media_whitelist=[]
