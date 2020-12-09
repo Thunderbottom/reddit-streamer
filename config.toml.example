@@ -5,6 +5,7 @@ debug=false
 [telegram]
 api_key=""
 channel_ids=[]
+post_reddit_link=false
 
 [filters]
 subreddit=""

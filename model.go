@@ -22,6 +22,7 @@ type filters struct {
 }
 
 type telegram struct {
-	APIKey     string  `koanf:"api_key"`
-	ChannelIDs []int64 `koanf:"channel_ids"`
+	APIKey         string  `koanf:"api_key"`
+	ChannelIDs     []int64 `koanf:"channel_ids"`
+	PostRedditLink bool    `koanf:"post_reddit_link"`
 }

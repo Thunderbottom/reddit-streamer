@@ -33,8 +33,13 @@ func filterAndPost(bot *tgbotapi.BotAPI, cfg config, post *reddit.Post) {
 
 	for _, ch := range cfg.Telegram.ChannelIDs {
 		if isChMember(bot, ch) {
-			msg := tgbotapi.NewMessage(ch, post.Title+"\n\n"+post.URL)
-			go bot.Send(msg)
+			msg := fmt.Sprintf("%s\n\n[Article](%s)", post.Title, post.URL)
+			if cfg.Telegram.PostRedditLink {
+				msg = fmt.Sprintf("%s, [Comments](%s)", msg, post.Permalink)
+			}
+			m := tgbotapi.NewMessage(ch, msg)
+			m.ParseMode = "MarkdownV2"
+			go bot.Send(m)
 		}
 	}
 }
